@@ -2,11 +2,11 @@
 
 <div align="center">
 <h1 align="center">My-Actions</h1>
-<img src="https://img.shields.io/github/issues/zhonghuaifang/My-Actions?color=8ab803">
-<img src="https://img.shields.io/github/stars/zhonghuaifang/My-Actions?color=cda619">
-<img src="https://img.shields.io/github/forks/zhonghuaifang/My-Actions?color=e97536">
-<img src="https://img.shields.io/github/license/zhonghuaifang/My-Actions?color=ff69b4">
-<img src="https://img.shields.io/github/languages/code-size/zhonghuaifang/My-Actions?color=7f2ace">
+<img src="https://img.shields.io/github/issues/buiawpkgew1/My-Actions?color=8ab803">
+<img src="https://img.shields.io/github/stars/buiawpkgew1/My-Actions?color=cda619">
+<img src="https://img.shields.io/github/forks/buiawpkgew1/My-Actions?color=e97536">
+<img src="https://img.shields.io/github/license/buiawpkgew1/My-Actions?color=ff69b4">
+<img src="https://img.shields.io/github/languages/code-size/buiawpkgew1/My-Actions?color=7f2ace">
 </div>
 
 ### 2022.3.18
