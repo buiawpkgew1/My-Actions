@@ -88,7 +88,7 @@ if __name__ == '__main__':
         msg = "打卡成功, 最后一次打卡: %s" % result["punchInLastDay"]
         print(msg)
     else:
-        msg = '重复签到 - Already punch-in'
+        msg = '重复签到 - Already punch-in https://github.com/buiawpkgew1/My-Actions'
         print(msg)
 
 if SEND_KEY == '':
