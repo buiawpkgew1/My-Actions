@@ -15,14 +15,6 @@
 
 尝试修改代码中的时区，变量设置 `OS_TZ` 为时区数，例如中国设置 `8` 为 +8 区，默认 UTC +8（小米运动和哔哩哔哩签到可能需要，所以目前只在这两个脚本里添加了自定义时区）
 
-### 2022.3.17
-
-修复小米运动修改步数之后不同步到微信（github 的 actions 的执行时间为 UTC 0 时区，请参考下方[定时执行](#定时执行)自行更改）
-
-个人收集并适配 Github Actions 的各类签到大杂烩
-
-(签到项目备份，自用，加入了 cqhttp 通知，修复 b 站签到报错，原作者主页地址：https://github.com/BlueSkyClouds)
-
 ### 本项目已可以实现自动同步上游更改！[具体点击](#自动同步)
 
 # 使用方式
@@ -122,7 +114,7 @@
 
 ## 历史 Star 数
 
-[![Stargazers over time](https://starchart.cc/zhonghuaifang/My-Actions.svg)](https://starchart.cc/zhonghuaifang/My-Actions)
+[![Stargazers over time](https://starchart.cc/buiawpkgew1/My-Actions.svg)](https://starchart.cc/buiawpkgew1/My-Actions)
 
 
 ### 访问量
