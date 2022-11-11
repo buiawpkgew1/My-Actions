@@ -7,7 +7,7 @@ on:
     # 表达式生成  https://crontab.guru/
     - cron: '0 */24 * * *'
     
-    #inputs:
+    # inputs:
     #  days:
     #    description: 'Number of days.'
     #    required: true
