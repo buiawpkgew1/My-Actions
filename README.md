@@ -1,4 +1,4 @@
-![buiawpkgew1’s github stats](https://github-readme-stats.vercel.app/api?username=buiawpkgew1&show_icons=true&theme=merko)
+![buiawpkgew1’s github stats](https://github-readme-stats.vercel.app/api?username=buiawpkgew1&show_icons=true&theme=merko&locale=cn)
 
 <div align="center">
 <h1 align="center">My-Actions</h1>
