@@ -2,4 +2,4 @@ version: "1"
 rules:                      # Array of rules
   - base: main            # Required. Target branch
     upstream: zhonghuaifang:main    # Required. Must be in the same fork network.
-    mergeMethod: merge  # Optional, one of [none, merge, squash, rebase, hardreset], Default: none.
+    mergeMethod: merge  # Optional, one of [none, merge, squash, rebase, hardreset], Default: none
