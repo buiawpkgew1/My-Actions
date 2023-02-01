@@ -17,6 +17,7 @@ pica_api_host = "picaapi.picacomic.com"
 pica_api_base_url = "https://%s/" % pica_api_host
 sign_in_path = "auth/sign-in"
 punch_in_path = "users/punch-in"
+pica_userinfo = '/users/profile'
 POST = "POST"
 
 # noinspection SpellCheckingInspection
