@@ -1,6 +1,11 @@
 name: 八度软件库
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'function/rj/*'
   workflow_dispatch:
   schedule:
     - cron: '01 04 * * *'
@@ -23,7 +28,7 @@ jobs:
       - name: '安装依赖包'
         run: pip install -r ./requirements.txt
 
-      - name: '运行 哔咔漫画自动打哔咔'
+      - name: '运行'
         run: python3 function/rj/8du.py
         env:
           SEND_KEY: ${{ secrets.SEND_KEY }}
