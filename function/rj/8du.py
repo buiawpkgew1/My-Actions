@@ -33,7 +33,7 @@ for it in result:
     print(it.group("dizi"))
     print(it.group("name"))
     print(it.group("mos"))
-    # print("分区：%s\t软件名：%s\t描述：%s\t地址：%s" % (fenqu, name, 描述, dizi))
+    # print("地址：%s\t分区：%s\t软件名：%s\t描述：%s" % (dizi, fenqu, name, 描述))
     # print("完成？")
 
 # print(response.text)
