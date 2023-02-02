@@ -25,7 +25,7 @@ page_content = response.text
 obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
                  r'<a href="(?P<dizi>.*?)".*?'
                  r'lf"></span>(?P<name>.*?)</a>.*?'
-                 r'</a>(?P<mos>.*?)</p>.*?</div>', re.S)
+                 r'<p cp-post-excerpt>(?P<mos>.*?)</p>.*?</div>', re.S)
 
 # obj = re.compile(r'<a href=".*?"cp-post-cat>(?P<fenqu>.*?)</a>.*?'
 #                  r'<a href="(?P<dizi>.*?)".*?'
