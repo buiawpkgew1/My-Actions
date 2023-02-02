@@ -19,8 +19,7 @@ page_content = response.text
 # obj=re.compile(r'<a href="(?P<dizi>.*?)" target="_self"></span>(?P<name>.*?)</a>\n</h2>\n<p cp-post-excerpt>\n(?P<mos>.*?)\n</p>',re.S)
 obj = re.compile(r'<a href=.*?cp-post-cat>(?P<fenqu>.*?)</a>\n.*?\n.*?\n.*?\n.*?\n.*?\n'
                  r'<a href="(?P<dizi>.*?)" target="_self"></span>(?P<name>.*?)</a>'
-                 r'<p cp-post-excerpt>\n(?P<mos>.*?)\n</p>'
-                 r'<a href=.*?cp-post-cat>.*?</a>\n.*?\n.*?\n.*?\n.*?\n.*?\n')
+                 r'<p cp-post-excerpt>\n(?P<mos>.*?)\n</p>',re.S)
 
 result = obj.finditer(page_content)
 for it in result:
