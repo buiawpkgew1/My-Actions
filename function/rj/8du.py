@@ -20,8 +20,13 @@ page_content = response.text
 # obj = re.compile(r'<a href=.*?cp-post-cat>(?P<fenqu>.*?)</a>\n.*\n.*\n.*\n.*\n.*\n'
 #                  r'<a href="(?P<dizi>.*?)" target="_self"></span>(?P<name>.*?)</a>'
 #                  r'<p cp-post-excerpt>\n(?P<mos>.*?)\n')
-obj=re.compile(r'*?<a href=.*.cp-post-cat>(?P<fenqu>.*?)</a>.*<a href="(?P<dizi>.*?)".*an>(?P<name>.*?)</a>.*<p cp-post-excerpt>(?P<mos>.*?)</p>*?',re.S)
+# obj=re.compile(r'<a href=.*.cp-post-cat>(?P<fenqu>.*?)</a>.*<a href="(?P<dizi>.*?)".*an>(?P<name>.*?)</a>.*<p cp-post-excerpt>(?P<mos>.*?)</p>*?',re.S)
 
+obj = re.compile(r'<a href=".*?"cp-post-cat>(?P<fenqu>.*?)</a>.*?'
+                 r'<a href="(?P<dizi>.*?)".*?'
+                 r'</span>(?P<name>.*?)</a>.*?'
+                 r'<p cp-post-excerpt>(?P<mos>.*?)</p>'
+                 r'', re.S)
 result = obj.finditer(page_content)
 for it in result:
     fenqu=it.group("fenqu")
