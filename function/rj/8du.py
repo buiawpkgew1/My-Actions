@@ -2,7 +2,7 @@
 import sys
 import requests
 sys.path.append("My-Actions/function/rj/")
-from sendNotify import *
+# from sendNotify import *
 
 url='https://ruanjianku.cloud/'
 headers = {
