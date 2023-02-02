@@ -22,8 +22,9 @@ page_content = response.text
 #                  r'<p cp-post-excerpt>\n(?P<mos>.*?)\n')
 # obj=re.compile(r'<a href=.*.cp-post-cat>(?P<fenqu>.*?)</a>.*<a href="(?P<dizi>.*?)".*an>(?P<name>.*?)</a>.*<p cp-post-excerpt>(?P<mos>.*?)</p>*?',re.S)
 
-obj = re.compile(r'<a href=".*?cp-post-cat>(?P<name>.*?)</a>.*?'
-                 r'<a href="(?P<dizi>.*?)"', re.S)
+obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
+                 r'<a href="(?P<dizi>.*?)".*?'
+                 r'lf"></span>(?P<name>.*?)', re.S)
 
 # obj = re.compile(r'<a href=".*?"cp-post-cat>(?P<fenqu>.*?)</a>.*?'
 #                  r'<a href="(?P<dizi>.*?)".*?'
@@ -32,7 +33,7 @@ obj = re.compile(r'<a href=".*?cp-post-cat>(?P<name>.*?)</a>.*?'
 #                  r'', re.S)
 result = obj.finditer(page_content)
 for it in result:
-    # fenqu=it.group("fenqu")
+    fenqu=it.group("fenqu")
     dizi=it.group("dizi")
     name=it.group("name")
     # 描述=it.group("mos")
@@ -41,7 +42,7 @@ for it in result:
     # print(it.group("dizi"))
     # print(it.group("name"))
     # print(it.group("mos"))
-    print("分区：%s\t地址：%s" % (name,dizi))
+    print("分区：%s\t地址：%s\t软件：%s" % (fenqu,dizi,name))
     # print("地址：%s\t分区：%s\t软件名：%s\t描述：%s" % (dizi, fenqu, name, 描述))
     # print("完成？")
 
