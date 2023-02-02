@@ -17,7 +17,7 @@ response = requests.request("GET", url, headers=headers)
 page_content = response.text
 # print(page_content)
 
-obj=re.compile(r'<a href=.*.cp-post-cat>(?P<fenqu>.*?)</a>\n.*\n.*\n.*\n.*\n.*\n<a href="(?P<dizi>.*?)".*an>(?P<name>.*?)</a>\n.*\n.*\n(?P<mos>.*?)\n',re.S)
+obj=re.compile(r'<a href=.*.cp-post-cat>(?P<fenqu>.*?)</a>\n.*\n.*\n.*\n.*\n.*\n<a href="(?P<dizi>.*?)".*an>(?P<name>.*?)</a>\n.*\n.*\n(?P<mos>.*?)\n')
 # obj = re.compile(r'<a href=.*?cp-post-cat>(?P<fenqu>.*?)</a>\n.*\n.*\n.*\n.*\n.*\n'
 #                  r'<a href="(?P<dizi>.*?)" target="_self"></span>(?P<name>.*?)</a>'
 #                  r'<p cp-post-excerpt>\n(?P<mos>.*?)\n')
