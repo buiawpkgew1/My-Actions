@@ -1,4 +1,5 @@
 # coding=utf-8
+import re
 import sys
 import requests
 sys.path.append("My-Actions/function/rj/")
@@ -9,6 +10,16 @@ headers = {
     'content-type': 'text/html; charset=UTF-8',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70'
 }
-response = requests.request("GET", url, headers=headers)
+# def comic(comic):
+#     print(comic)
 
-print(response.text)
+response = requests.request("GET", url, headers=headers)
+obj = re.compile(r'<a href=".*?"target=".*?"cppost-cat=".*?"class="link-instanted">(?P<fenqu>.*?)</a>' )
+result = obj.finditer(response)
+for it in result:
+    fqu=it.group('id')
+    print(fqu)
+    # print(it.group("id"))
+    # print(it.group("wahaha"))
+
+# print(response.text)
