@@ -16,7 +16,12 @@ headers = {
 response = requests.request("GET", url, headers=headers)
 page_content = response.text
 
-obj = re.compile(r'<a href=".*" target=".*" cp-post-cat>(?P<fenqu>.*?)</a>' )
+obj = re.compile(r'<a href=".*" target=".*" cp-post-cat>(?P<fenqu>.*?)</a>',re.S)
+
+# obj = re.compile(r'<a href=".*" target=".*" cp-post-cat>(?P<fenqu>.*?)</a>'
+#                  r'title="(?P<title>.*?)">*?'
+#                  r'', re.S)
+
 result = obj.finditer(page_content)
 for it in result:
     fqu=it.group('fenqu')
