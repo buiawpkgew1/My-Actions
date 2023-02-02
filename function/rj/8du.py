@@ -31,10 +31,11 @@ obj = re.compile(r'<a href=".*?cp-post-cat>(?P<name>.*?)</a>'
 #                  r'', re.S)
 result = obj.finditer(page_content)
 for it in result:
-    fenqu=it.group("fenqu")
-    dizi=it.group("dizi")
+    # fenqu=it.group("fenqu")
+    # dizi=it.group("dizi")
     name=it.group("name")
-    描述=it.group("mos")
+    # 描述=it.group("mos")
+    
     # print(it.group("fenqu"))
     # print(it.group("dizi"))
     # print(it.group("name"))
