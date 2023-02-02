@@ -16,7 +16,6 @@ headers = {
 response = requests.request("GET", url, headers=headers)
 page_content = response.text
 
-# obj = re.compile(r'<a href=".*" target=".*" cp-post-cat>(?P<fenqu>.*?)</a>',re.S)
 obj=re.compile(r'<a href="(?P<dizi>.*?)" target="_self"></span>(?P<name>.*?)</a>\n</h2>\n<p cp-post-excerpt>\n(?P<mos>.*?)\n</p>')
 # obj = re.compile(r'<a href="(?P<dizi>.*?)" target="_self"></span>(?P<name>.*?)</a>'
 #                 #  r'<a href=".*" target=".*" cp-post-cat>(?P<fenqu>.*?)</a>'
@@ -28,7 +27,7 @@ for it in result:
     # 分区=it.group("fenqu")
     name=it.group("name")
     描述=it.group("mos")
-    print("地址：%s\t分区：%s\t软件名：%s\t描述：%s" % (diz, 分区, name, 描述))
+    print("地址：%s\t分区：%s\t软件名：%s\t描述：" % (diz, name, 描述))
     # fqu=it.group('fenqu')
     # print(it.group("fenqu").strip())
 
