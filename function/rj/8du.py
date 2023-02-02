@@ -25,11 +25,15 @@ obj=re.compile(r'<a href=.*.cp-post-cat>(?P<fenqu>.*?)</a>.*<a href="(?P<dizi>.*
 
 result = obj.finditer(page_content)
 for it in result:
-    dizi=it.group("dizi")
     fenqu=it.group("fenqu")
+    dizi=it.group("dizi")
     name=it.group("name")
     描述=it.group("mos")
-    print("分区：%s\t软件名：%s\t描述：%s\t地址：%s" % (fenqu, name, 描述, dizi))
-    print("完成？")
+    print(it.group("fenqu"))
+    print(it.group("dizi"))
+    print(it.group("name"))
+    print(it.group("mos"))
+    # print("分区：%s\t软件名：%s\t描述：%s\t地址：%s" % (fenqu, name, 描述, dizi))
+    # print("完成？")
 
 # print(response.text)
