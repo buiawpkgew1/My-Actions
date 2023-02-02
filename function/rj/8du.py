@@ -26,10 +26,10 @@ obj = re.compile(r'<a href="(?P<dizi>.*?)" target="_self"></span>(?P<name>.*?)</
 result = obj.finditer(page_content)
 for it in result:
     diz=it.group("dizi")
+    分区=it.group("fenqu")
     name=it.group("name")
-    wz=it.group("wz")
     描述=it.group("mos")
-    print("地址：%s\t分区：%s\t软件名：%s\t描述：%s",diz,wz,name,描述)
+    print("地址：%s\t分区：%s\t软件名：%s\t描述：%s" % (diz, 分区, name, 描述))
     # fqu=it.group('fenqu')
     # print(it.group("fenqu").strip())
     print("完成!")
