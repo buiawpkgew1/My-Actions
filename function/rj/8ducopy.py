@@ -5,25 +5,25 @@ import csv
 import requests
 sys.path.append("My-Actions/function/rj/")
 
-url='https://ruanjianku.cloud/'
-headers = {
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70'
-}
+# url='https://ruanjianku.cloud/'
+# headers = {
+#     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70'
+# }
 
-response = requests.request("GET", url, headers=headers)
-page_content = response.text
+# response = requests.request("GET", url, headers=headers)
+# page_content = response.text
 
-obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
-                 r'<a href="(?P<dizi>.*?)".*?'
-                 r'lf"></span>(?P<name>.*?)</a>.*?'
-                 r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
+# obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
+#                  r'<a href="(?P<dizi>.*?)".*?'
+#                  r'lf"></span>(?P<name>.*?)</a>.*?'
+#                  r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
 
-result = obj.finditer(page_content)
+# result = obj.finditer(page_content)
 
 # print(result)
 
-if result:
-    for it in result:
+# if result:
+#     for it in result:
         # print("分区：",it.group("fenqu"))
         # print("地址：",it.group("dizi"))
         # print("软件：",it.group("name"))
@@ -39,6 +39,16 @@ if result:
         #     writer.writerow(L)
         #     # print(fenqu,dizi,name,mos)
         
-        with open('./function/rj/rj.csv') as f:
-            lst = list(set(f))
-            print(lst)
+# with open('./function/rj/rj.csv','r',newline='',encoding='utf-8') as f:
+#     lst = list(set(f))
+#     print(lst)
+#     with open('./function/rj/rj1.csv','a+',newline='',encoding='utf-8') as f:
+#         writer=csv.writer(f)
+#         writer.writerow(f)
+
+import pandas as pd
+
+path = './function/rj/rj.csv'#读取数据
+df = pd.read_csv(path, encoding='gbk',usecols=[0,4,6])#选取第1，5，7列
+frame = pd.DataFrame(df)
+print(frame)
