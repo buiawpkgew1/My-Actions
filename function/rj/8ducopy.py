@@ -4,7 +4,7 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70'
 }
 
-res = urllib.request.urlopen(url,headers)  # get方式请求
+res = urllib.request.urlopen(url,headers=headers)  # get方式请求
 print(res)  # 返回HTTPResponse对象<http.client.HTTPResponse object at 0x00000000026D3D00>
 
 
