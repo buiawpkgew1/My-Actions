@@ -48,6 +48,15 @@ sys.path.append("My-Actions/function/rj/")
 
 import pandas as pd
 
-data = pd.read_csv("./function/rj/rj1.csv", encoding='utf-8')             #读取csv文件
-value = data['名字']
-print(value)
+data = pd.read_excel("./function/rj/rj.csv")
+#删除单位列的，空行数据
+data.dropna(subset=['名字'], inplace=True)
+
+# 第三步：获取 单位 列表并去重
+department_list = list(data['名字'].drop_duplicates())  # 获取数据 单位 列，去重并放入列表
+print(department_list)
+
+# 第四步：按照类别分文件存放数据
+for i in department_list:
+    department = data[data['名字'] == i]
+    department.to_excel('./' + str(i) + '名字.xlsx')
