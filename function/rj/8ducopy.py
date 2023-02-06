@@ -49,6 +49,6 @@ sys.path.append("My-Actions/function/rj/")
 import pandas as pd
 
 path = './function/rj/rj.csv'#读取数据
-df = pd.read_csv(path, encoding='gbk',usecols=[0,4,6])#选取第1，5，7列
+df = pd.read_csv(path, encoding='gbk',usecols=[2])#选取第1，5，7列
 frame = pd.DataFrame(df)
 print(frame)
