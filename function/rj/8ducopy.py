@@ -88,8 +88,21 @@ def analysisData(baseurl):
 
 
 def main():
+    savepath = "function\\rj.xls"
+
+    book = xlwt.Workbook(encoding="utf-8", style_compression=0)  # 创建Workbook对象
+    sheet = book.add_sheet("软件", cell_overwrite_ok=True)  # 创建工作表
     col=("分区", "软件链接","软件","描述")
     print(len(dataList))
+    print(len(dataList))
+    for i in range(0, 7):
+        sheet.write(0, i, col[i])
+    for i in range(0, 250):
+        print('正在保存第'+str((i+1))+'条')
+        data = dataList[i]
+        for j in range(len(data)):
+            sheet.write(i + 1, j, data[j])
+    book.save(savepath)
     
 
 if __name__ == "__main__":
