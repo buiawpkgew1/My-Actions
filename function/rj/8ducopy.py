@@ -48,7 +48,7 @@ sys.path.append("My-Actions/function/rj/")
 
 import pandas as pd
 
-data = pd.read_excel("./function/rj/rj.csv")
+data = pd.read_csv("./function/rj/rj.csv")
 #删除单位列的，空行数据
 data.dropna(subset=['名字'], inplace=True)
 
