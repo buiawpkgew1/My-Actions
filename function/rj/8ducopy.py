@@ -28,12 +28,12 @@ def geturl(url):
         return html
 
 
-response = requests.request("GET", url, headers=headers)
-page_content = response.text
-obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
-                 r'<a href="(?P<dizi>.*?)".*?'
-                 r'lf"></span>(?P<name>.*?)</a>.*?'
-                 r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
+# response = requests.request("GET", url, headers=headers)
+# page_content = response.text
+# obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
+#                  r'<a href="(?P<dizi>.*?)".*?'
+#                  r'lf"></span>(?P<name>.*?)</a>.*?'
+#                  r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
 
 name=re.compile(r'lf"></span>(?P<name>.*?)</a>')
 dizi=re.compile(r'<a href="(?P<dizi>.*?)".*?')
