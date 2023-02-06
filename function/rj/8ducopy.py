@@ -23,15 +23,15 @@ obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
 
 result = obj.findall(page_content)
 
-print(result)
+# print(result)
 
-if result:
-    for result in result:
-        print("分区：",result[0])
-        print("地址：",result[1])
-        print("软件：",result[2])
-        print("描述：",result[3].strip())
-        print(20*'*')
+# if result:
+#     for result in result:
+#         print("分区：",result[0])
+#         print("地址：",result[1])
+#         print("软件：",result[2])
+#         print("描述：",result[3].strip())
+#         print(20*'*')
 class MaoyanSpider(object): 
     def __init__(self):
         self.url = 'https://ruanjianku.cloud/'
