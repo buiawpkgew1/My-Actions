@@ -1,10 +1,7 @@
 # coding=utf-8
 import re
-import time
 import sys
-from urllib import request
 import csv
-import random
 import requests
 sys.path.append("My-Actions/function/rj/")
 

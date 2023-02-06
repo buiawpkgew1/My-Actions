@@ -7,8 +7,8 @@ on:
     paths:
       - 'function/rj/8ducopy.py'
   workflow_dispatch:
-  schedule:
-    - cron: '01 04 * * *'
+  # schedule:
+  #   - cron: '01 04 * * *'
   watch:
     types: [started]
 
