@@ -23,7 +23,7 @@ obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
 
 result = obj.finditer(page_content)
 
-print(result)
+# print(result)
 
 if result:
     for it in result:
@@ -38,6 +38,6 @@ if result:
             dizi= it.group("dizi")
             name= it.group("name")
             mos = it.group("mos")
-            L=[fenqu,dizi,name,mos]
+            L=[fenqu,'\n',dizi,'\n',name,'\n',mos]
             writer.writerow(L)
-            print(fenqu,dizi,name,mos)
+            print(fenqu,'\n',dizi,'\n',name,'\n',mos)
