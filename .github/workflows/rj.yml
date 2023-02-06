@@ -31,7 +31,7 @@ jobs:
       - name: '运行'
         run: |
           python3 function/rj/8du.py
-          git add */rj.txt.txt
+          git add */rj.txt
         env:
           SEND_KEY: ${{ secrets.SEND_KEY }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
