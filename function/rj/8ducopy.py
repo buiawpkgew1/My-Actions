@@ -40,6 +40,5 @@ if result:
         #     # print(fenqu,dizi,name,mos)
         
         with open('./function/rj/rj.csv') as f:
-            content = f.read()
-            print(content)
-            f.close()
+            lst = list(set(f))
+            print(lst)
