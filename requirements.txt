@@ -1,6 +1,5 @@
 requests
 rsa
-bs4
 pytz
 python-dateutil
 chardet
