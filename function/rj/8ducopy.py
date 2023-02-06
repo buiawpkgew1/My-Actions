@@ -27,6 +27,22 @@ def geturl(url):
             print(e.reason)
         return html
 
+# 定义正则对象获取指定的内容
+# 提取链接（链接的格式都是<a href="开头的）
+findLink = re.compile(r'<a href="(.*?)">')
+# 提取图片
+findImgSrc = re.compile(r'<img.*src="(.*?)"', re.S)  # re.S让 '.' 特殊字符匹配任何字符，包括换行符；
+# 提取影片名称
+findTitle = re.compile(r'<span class="title">(.*)</span>')
+# 提取影片评分
+findRating = re.compile(r'<span class="rating_num" property="v:average">(.*)</span>')
+# 提取评价人数
+findJudge = re.compile(r'<span>(\d*)人评价</span>')
+# 提取简介
+inq = re.compile(r'<span class="inq">(.*)</span>')
+# 提取相关内容
+findBd = re.compile(r'<p class="">(.*)</p>(.*)<div', re.S)
+
 name=re.compile(r'lf"></span>(?P<name>.*?)</a>')
 dizi=re.compile(r'<a href="(?P<dizi>.*?)".*?')
 mos=re.compile(r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>')
