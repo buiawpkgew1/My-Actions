@@ -33,6 +33,7 @@ jobs:
       - name: '运行'
         run: |
           python3 function/rj/8ducopy.py
+          git add function/rj/rj.csv
         env:
           SEND_KEY: ${{ secrets.SEND_KEY }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
@@ -41,9 +42,6 @@ jobs:
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           OS_TZ: ${{ secrets.OS_TZ }}
 
-      - name: '运行'
-        run: |
-          git add function/rj/rj.csv
       - name: commit & push
         uses: actions-go/push@master
         with:
