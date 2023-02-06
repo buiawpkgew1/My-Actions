@@ -40,7 +40,7 @@ jobs:
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           OS_TZ: ${{ secrets.OS_TZ }}
 
-    - name: commit & push
+      - name: commit & push
         uses: actions-go/push@master
         with:
           author-email: 'actions@github.com'
