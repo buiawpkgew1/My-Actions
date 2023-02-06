@@ -97,7 +97,7 @@ def main():
     print(len(dataList))
     for i in range(0, 4):
         sheet.write(0, i, col[i])
-    for i in range(0, 250):
+    for i in range(0, 0):
         print('正在保存第'+str((i+1))+'条')
         data = dataList[i]
         for j in range(len(data)):
