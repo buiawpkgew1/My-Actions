@@ -48,15 +48,6 @@ sys.path.append("My-Actions/function/rj/")
 
 import pandas as pd
 
-data = pd.read_csv("./function/rj/rj1.csv")             #读取csv文件
-   
-dateMap = []
-
-for i in range(len(data)):
-    dateMap.append(data["名字"][i])
-    
-print("去重复前数量："+len(data).__str__())
-formatList = list(set(dateMap))
-formatList.sort(key=dateMap.index)
-
-print("去重复后数量："+len(formatList).__str__() )
+data = pd.read_csv("./function/rj/rj1.csv", encoding='utf-8')             #读取csv文件
+value = data['名字']
+print(value)
