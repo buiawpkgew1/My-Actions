@@ -1,0 +1,49 @@
+name: 八度软件库
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'function/rj/8du copy.py'
+  workflow_dispatch:
+  schedule:
+    - cron: '01 04 * * *'
+  watch:
+    types: [started]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.repository.owner.id }} == ${{ github.event.sender.id }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: 'Set up Python'
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: '安装依赖包'
+        run: pip install -r ./requirements.txt
+
+      - name: '运行'
+        run: |
+          python3 function/rj/8du copy.py
+          git add function/rj/rj.txt
+        env:
+          SEND_KEY: ${{ secrets.SEND_KEY }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+          OS_TZ: ${{ secrets.OS_TZ }}
+
+      - name: commit & push
+        uses: actions-go/push@master
+        with:
+          author-email: 'actions@github.com'
+          author-name: 'GitHub Actions'
+          commit-message: '更新'
+          token: ${{ secrets.GITHUB_TOKEN }}
