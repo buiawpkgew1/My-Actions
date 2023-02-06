@@ -27,14 +27,6 @@ def geturl(url):
             print(e.reason)
         return html
 
-
-# response = requests.request("GET", url, headers=headers)
-# page_content = response.text
-# obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
-#                  r'<a href="(?P<dizi>.*?)".*?'
-#                  r'lf"></span>(?P<name>.*?)</a>.*?'
-#                  r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
-
 name=re.compile(r'lf"></span>(?P<name>.*?)</a>')
 dizi=re.compile(r'<a href="(?P<dizi>.*?)".*?')
 mos=re.compile(r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>')
@@ -80,6 +72,12 @@ def analysisData(baseurl):
     return dataList
         
 
+# response = requests.request("GET", url, headers=headers)
+# page_content = response.text
+# obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
+#                  r'<a href="(?P<dizi>.*?)".*?'
+#                  r'lf"></span>(?P<name>.*?)</a>.*?'
+#                  r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
 # result = obj.finditer(page_content)
 # for it in result:
 #     fenqu=it.group("fenqu")
