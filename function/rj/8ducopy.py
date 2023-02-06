@@ -21,24 +21,23 @@ obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
                  r'lf"></span>(?P<name>.*?)</a>.*?'
                  r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
 
-result = obj.findall(page_content)
+result = obj.finditer(page_content)
 
 print(result)
 
 if result:
-    for result in result:
-        print("分区：",result[0])
-        print("地址：",result[1])
-        print("软件：",result[2])
-        print("描述：",result[3].strip())
+    for it in result:
+        print("分区：",it.group("fenqu"))
+        print("地址：",it.group("dizi"))
+        print("软件：",it.group("name"))
+        print("描述：",it.group("mos"))
         print(20*'*')
-    with open('function\\rj\\rj.csv','a',newline='',encoding='utf-8') as f:
-            writer=csv.writer(f)
-            for r in result:
-                fenqu=result[0].strip()
-                dizi=result[1].strip()
-                name=result[2].strip()
-                mos=result[3].strip()[5:]
-                L=[fenqu,dizi,name,mos]
-                writer.writerow(L)
-                print(fenqu,dizi,name,mos)
+#         with open('function\\rj\\rj.csv','a',newline='',encoding='utf-8') as f:
+#             writer=csv.writer(f)
+#             fenqu=result[0]
+#             dizi=result[1]
+#             name=result[2]
+#             mos=result[3]
+#             L=[fenqu,dizi,name,mos]
+#             writer.writerow(L)
+#             print(fenqu,dizi,name,mos)
