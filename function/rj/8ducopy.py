@@ -1,7 +1,10 @@
 import urllib.request
-
-# 请求的URL
-url = "http://httpbin.org/get"
-# 模拟浏览器打开网页(get请求)
-res = urllib.request.urlopen(url)
-print(res.read().decode("utf-8"))
+ 
+url = "https://ruanjianku.cloud/"
+# 自定义headers
+headers = {
+	'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36'
+}
+req = urllib.request.Request(url, headers=headers)
+# urlopen(也可以是request对象)
+print(urllib.request.urlopen(req).read().decode('utf-8'))
