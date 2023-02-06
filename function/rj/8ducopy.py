@@ -17,7 +17,7 @@ obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
                  r'lf"></span>(?P<name>.*?)</a>.*?'
                  r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
 
-result = obj.finditer(page_content)
+result = obj.findall(page_content)
 
 print(result)
 
