@@ -27,6 +27,7 @@ jobs:
 
       - name: '安装依赖包'
         run: |
+          pip install --upgrade pip
           pip install -r ./requirements.txt
           pip install bs4
           pip install xlwt
