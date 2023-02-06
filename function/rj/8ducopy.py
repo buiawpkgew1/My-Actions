@@ -4,7 +4,7 @@ res = urllib.request.urlopen(url)  # get方式请求
 print(res)  # 返回HTTPResponse对象<http.client.HTTPResponse object at 0x00000000026D3D00>
 # 读取响应体
 bys = res.read()  # 调用read()方法得到的是bytes对象。
-print(bys)  # <!DOCTYPE html><!--STATUS OK-->\n\n\n    <html><head><meta...
+# print(bys)  # <!DOCTYPE html><!--STATUS OK-->\n\n\n    <html><head><meta...
 print(bys.decode("utf-8"))  # 获取字符串内容，需要指定解码方式,这部分我们放到html文件中就是百度的主页
  
 # 获取HTTP协议版本号(10 是 HTTP/1.0, 11 是 HTTP/1.1)
