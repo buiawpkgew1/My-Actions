@@ -34,7 +34,7 @@ jobs:
       - name: '运行'
         run: |
           python3 function/rj/8ducopy.py
-          git add function/rj/rj.txt
+          git add function/rj/rj.xls
         env:
           SEND_KEY: ${{ secrets.SEND_KEY }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
