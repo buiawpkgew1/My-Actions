@@ -23,13 +23,14 @@ for it in result:
     dizi=it.group("dizi")
     name=it.group("name")
     描述=it.group("mos")
-    # print("分区：%s\t地址：%s\t软件：%s\n描述：%s" % (fenqu,dizi,name,描述))
+    print("分区：%s\t地址：%s\t软件：%s\n描述：%s" % (fenqu,dizi,name,描述))
 
 # for ia in it:
 #     d=str(it)
 #     print(d)
-for a in it:
+
+for a in str(it):
     with open("function/rj/rj.txt","w+") as f: # 打开文件
         # data = f.read() # 读取文件
         f.write(str(it))
-        # print('cs')
+        print('cs')
