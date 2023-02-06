@@ -1,24 +1,29 @@
-import urllib.request
-url = "https://ruanjianku.cloud/"
-# 自定义headers
+# coding=utf-8
+import re
+import sys
+import requests
+sys.path.append("My-Actions/function/rj/")
+
+url='https://ruanjianku.cloud/'
 headers = {
-	'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36'
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70'
 }
-req = urllib.request.Request(url, headers=headers)
-rw= urllib.request.urlopen(req).read().decode('utf-8')
 
-import urllib.request,urllib.error
+response = requests.request("GET", url, headers=headers)
+page_content = response.text
 
-try:
-    url = "https://ruanjianku.cloud/"
-    req = urllib.request.Request(url, headers=headers)
-    resp = urllib.request.urlopen(req)
-    print(resp.read().decode('utf-8'))
-# except urllib.error.HTTPError as e:
-#     print("请检查url是否正确")
-# URLError是urllib.request异常的超类
-except urllib.error.URLError as e:
-    if hasattr(e, "code"):
-        print(e.code)
-    if hasattr(e, "reason"):
-        print(e.reason)
+obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
+                 r'<a href="(?P<dizi>.*?)".*?'
+                 r'lf"></span>(?P<name>.*?)</a>.*?'
+                 r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
+
+result = obj.finditer(page_content)
+
+print(result)
+
+# for it in result:
+#     fenqu=it.group("fenqu")
+#     dizi=it.group("dizi")
+#     name=it.group("name")
+#     描述=it.group("mos")
+#     print("分区：%s\t地址：%s\t软件：%s\n描述：%s" % (fenqu,dizi,name,描述))
