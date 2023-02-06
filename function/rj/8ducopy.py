@@ -80,13 +80,13 @@ def analysisData(baseurl):
     return dataList
         
 
-result = obj.finditer(page_content)
-for it in result:
-    fenqu=it.group("fenqu")
-    dizi=it.group("dizi")
-    name=it.group("name")
-    描述=it.group("mos")
-    print("分区：%s\t地址：%s\t软件：%s\n描述：%s" % (fenqu,dizi,name,描述))
+# result = obj.finditer(page_content)
+# for it in result:
+#     fenqu=it.group("fenqu")
+#     dizi=it.group("dizi")
+#     name=it.group("name")
+#     描述=it.group("mos")
+#     print("分区：%s\t地址：%s\t软件：%s\n描述：%s" % (fenqu,dizi,name,描述))
 
 
 def main():
