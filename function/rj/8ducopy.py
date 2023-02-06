@@ -27,17 +27,17 @@ print(result)
 
 if result:
     for it in result:
-        print("分区：",it.group("fenqu"))
-        print("地址：",it.group("dizi"))
-        print("软件：",it.group("name"))
-        print("描述：",it.group("mos"))
-        print(20*'*')
-#         with open('function\\rj\\rj.csv','a',newline='',encoding='utf-8') as f:
-#             writer=csv.writer(f)
-#             fenqu=result[0]
-#             dizi=result[1]
-#             name=result[2]
-#             mos=result[3]
-#             L=[fenqu,dizi,name,mos]
-#             writer.writerow(L)
-#             print(fenqu,dizi,name,mos)
+        # print("分区：",it.group("fenqu"))
+        # print("地址：",it.group("dizi"))
+        # print("软件：",it.group("name"))
+        # print("描述：",it.group("mos"))
+        # print(20*'*')
+        with open('function\\rj\\rj.csv','a',newline='',encoding='utf-8') as f:
+            writer=csv.writer(f)
+            fenqu=it.group("fenqu")
+            dizi= it.group("dizi")
+            name= it.group("name")
+            mos = it.group("mos")
+            L=[fenqu,dizi,name,mos]
+            writer.writerow(L)
+            print(fenqu,dizi,name,mos)
