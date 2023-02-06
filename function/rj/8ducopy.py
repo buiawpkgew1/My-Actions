@@ -29,12 +29,17 @@ if result:
         # print("软件：",it.group("name"))
         # print("描述：",it.group("mos"))
         # print(20*'*')
-        with open('./function/rj/rj.csv','a',newline='',encoding='utf-8') as f:
-            writer=csv.writer(f)
-            fenqu=it.group("fenqu")
-            dizi= it.group("dizi")
-            name= it.group("name")
-            mos = it.group("mos")
-            L=[fenqu,dizi,name,mos]
-            writer.writerow(L)
-            # print(fenqu,dizi,name,mos)
+        # with open('./function/rj/rj.csv','a',newline='',encoding='utf-8') as f:
+        #     writer=csv.writer(f)
+        #     fenqu=it.group("fenqu")
+        #     dizi= it.group("dizi")
+        #     name= it.group("name")
+        #     mos = it.group("mos")
+        #     L=[fenqu,dizi,name,mos]
+        #     writer.writerow(L)
+        #     # print(fenqu,dizi,name,mos)
+        
+        with open('./function/rj/rj.csv') as f:
+            content = f.read()
+            print(content)
+            f.close()
