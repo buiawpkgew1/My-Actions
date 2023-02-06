@@ -21,6 +21,13 @@ result = obj.findall(page_content)
 
 print(result)
 
+if result:
+    for result in result:
+        print("分区：",result[0])
+        print("地址：",result[1])
+        print("软件：",result[2])
+        print("描述：",result[3].strip())
+        print(20*'*')
 # for it in result:
 #     fenqu=it.group("fenqu")
 #     dizi=it.group("dizi")
