@@ -95,7 +95,7 @@ def main():
     col=("分区", "软件链接","软件","描述")
     print(len(dataList))
     print(len(dataList))
-    for i in range(0, 7):
+    for i in range(0, 4):
         sheet.write(0, i, col[i])
     for i in range(0, 250):
         print('正在保存第'+str((i+1))+'条')
