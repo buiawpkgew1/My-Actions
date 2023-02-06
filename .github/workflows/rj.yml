@@ -46,4 +46,4 @@ jobs:
           author-email: 'actions@github.com'
           author-name: 'GitHub Actions'
           commit-message: '更新'
-          token: ${{ secrets.GIT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
