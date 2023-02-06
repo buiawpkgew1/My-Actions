@@ -38,6 +38,6 @@ if result:
             dizi= it.group("dizi")
             name= it.group("name")
             mos = it.group("mos")
-            L=[fenqu,'\n',dizi,'\n',name,'\n',mos]
+            L=[fenqu,dizi,name,mos]
             writer.writerow(L)
-            print(fenqu,'\n',dizi,'\n',name,'\n',mos)
+            print(fenqu,dizi,name,mos)
