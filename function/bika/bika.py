@@ -101,7 +101,7 @@ if __name__ == '__main__':
     profile_msg = ''
     profile_response = profile(current_token)
     profile_result = profile_response["data"]["user"]
-    profile_msg = f'\n用户名: {profile_result["name"]}\n等级: {profile_result["level"]}\n经验: {profile_result["exp"]}\n创建日期:{profile_result["created_at"]}'
+    profile_msg = f'\n用户名: {profile_result["name"]}\n等级: {profile_result["level"]}\n经验: {profile_result["exp"]}'
     print(profile_msg)
 if SEND_KEY == '':
     sendNotify.send(title=u"哔咔漫画自动打哔咔", msg="【哔咔漫画自动签到】\n" + msg+profile_msg)
