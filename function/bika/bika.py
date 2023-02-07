@@ -1,10 +1,10 @@
+from http import client
+from sendNotify import *
 import random
 import string
 import sys
 
 sys.path.append("My-Actions/function/bika/")
-from sendNotify import *
-from http import client
 
 sendNotify = sendNotify()
 
@@ -17,8 +17,9 @@ pica_api_host = "picaapi.picacomic.com"
 pica_api_base_url = "https://%s/" % pica_api_host
 sign_in_path = "auth/sign-in"
 punch_in_path = "users/punch-in"
-pica_userinfo = '/users/profile'
+profile_path = "users/profile"
 POST = "POST"
+GET = "GET"
 
 # noinspection SpellCheckingInspection
 api_key = "C69BAF41DA5ABD1FFEDC6D2FEA56B"
@@ -39,7 +40,8 @@ static_headers = {
 
 def send_request(path: string, method: string, body: string = None, token: string = None) -> dict:
     current_time = str(int(time.time()))
-    nonce = "".join(random.choices(string.ascii_lowercase + string.digits, k=32))
+    nonce = "".join(random.choices(
+        string.ascii_lowercase + string.digits, k=32))
     raw = path + current_time + nonce + method + api_key
     raw = raw.lower()
     h = hmac.new(api_secret.encode(), digestmod=hashlib.sha256)
@@ -78,6 +80,10 @@ def punch_in(token: string):
     return send_request(punch_in_path, POST, token=token)
 
 
+def profile(token: string):
+    return send_request(profile_path, GET, token=token)
+
+
 if __name__ == '__main__':
     if os.environ['BIKA_USER'] == "" or os.environ['BIKA_PASS'] == "":
         print("未填写哔咔账号密码 取消运行")
@@ -92,5 +98,10 @@ if __name__ == '__main__':
         msg = '重复签到 - Already punch-in https://github.com/buiawpkgew1/My-Actions'
         print(msg)
 
+    profile_msg = ''
+    profile_response = profile(current_token)
+    profile_result = profile_response["data"]["user"]
+    profile_msg = f'\n用户名: {profile_result["name"]}\n等级: {profile_result["level"]}\n经验: {profile_result["exp"]}'
+    print(profile_msg)
 if SEND_KEY == '':
-    sendNotify.send(title=u"哔咔漫画自动打哔咔", msg="【哔咔漫画自动签到】\n" + msg)
+    sendNotify.send(title=u"哔咔漫画自动打哔咔", msg="【哔咔漫画自动签到】\n" + msg+profile_msg)
