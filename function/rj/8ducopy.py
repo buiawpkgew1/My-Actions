@@ -16,32 +16,20 @@ sys.path.append("My-Actions/function/rj/")
 # obj = re.compile(r'<a href=".*?cp-post-cat>(?P<fenqu>.*?)</a>.*?'
 #                  r'<a href="(?P<dizi>.*?)".*?'
 #                  r'lf"></span>(?P<name>.*?)</a>.*?'
-#                  r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>', re.S)
+#                  r'<p cp-post-excerpt>\n(?P<mos>.*?)</p>.*?</div>.*?'
+#                  r'<span>(?P<riqi>.*?)</span>', re.S)
 
 # result = obj.finditer(page_content)
 
-# print(result)
-
 # if result:
 #     for it in result:
-        # print("分区：",it.group("fenqu"))
-        # print("地址：",it.group("dizi"))
-        # print("软件：",it.group("name"))
-        # print("描述：",it.group("mos"))
-        # print(20*'*')
-        # with open('./function/rj/rj.csv','a',newline='',encoding='utf-8') as f:
-        #     writer=csv.writer(f)
-        #     fenqu=it.group("fenqu")
-        #     dizi= it.group("dizi")
-        #     name= it.group("name")
-        #     mos = it.group("mos")
-        #     L=[fenqu,dizi,name,mos]
-        #     writer.writerow(L)
-        #     # print(fenqu,dizi,name,mos)
-        
-# with open('./function/rj/rj.csv','r',newline='',encoding='utf-8') as f:
-#     lst = list(set(f))
-#     print(lst)
-#     with open('./function/rj/rj1.csv','a+',newline='',encoding='utf-8') as f:
-#         writer=csv.writer(f)
-#         writer.writerow(f)
+#         with open('./function/rj/rj.csv','a',newline='',encoding='utf-8') as f:
+#             writer=csv.writer(f)
+#             fenqu=it.group("fenqu")
+#             riqi=it.group("riqi")
+#             dizi= it.group("dizi")
+#             name= it.group("name")
+#             mos = it.group("mos")
+#             L=[fenqu,riqi,dizi,name,mos]
+#             writer.writerow(L)
+#             print(fenqu,riqi,dizi,name,mos)
