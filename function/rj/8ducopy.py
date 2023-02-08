@@ -23,7 +23,7 @@ sys.path.append("My-Actions/function/rj/")
 
 # if result:
 #     for it in result:
-#         with open('./function/rj/rj.csv','a',newline='',encoding='utf-8') as f:
+#         with open('./function/rj/rj1.csv','a',newline='',encoding='utf-8') as f:
 #             writer=csv.writer(f)
 #             fenqu=it.group("fenqu")
 #             riqi=it.group("riqi")
